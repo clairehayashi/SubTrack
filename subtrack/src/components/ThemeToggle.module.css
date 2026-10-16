@@ -1,0 +1,35 @@
+.toggle {
+  position: relative;
+  flex-shrink: 0;
+
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--field-border);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-card);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.toggle:hover {
+  color: var(--color-brand-500);
+  border-color: var(--color-brand-500);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.toggle:active { transform: translateY(0); }
+
+.toggle svg { width: 16px; height: 16px; }

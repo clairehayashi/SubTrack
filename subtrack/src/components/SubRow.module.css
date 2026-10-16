@@ -1,0 +1,172 @@
+/* ────────────────────────────────────────────────
+   Subscription row
+   - Comfortable (default) and dense density modes
+   - Status color on the left rim
+   - Renewal urgency in the date text
+   ──────────────────────────────────────────────── */
+
+.row {
+  display: grid;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  background: var(--bg-surface);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card), -2px 0 10px var(--status-glow);
+  cursor: pointer;
+  position: relative;
+  border-left: 3px solid transparent;
+  transition:
+    box-shadow 200ms ease,
+    transform 200ms ease,
+    border-color 200ms ease;
+}
+
+.row:hover {
+  box-shadow: var(--shadow-card-hover), -2px 0 10px var(--status-glow);
+  transform: translateY(-1px);
+}
+
+.row:focus-visible {
+  outline: 2px solid var(--field-ring-focus);
+  outline-offset: 2px;
+}
+
+/* Fixed billing columns keep every row aligned, regardless of its content. */
+.comfortable {
+  grid-template-columns: 44px minmax(0, 1fr) 148px 76px 90px;
+  min-height: 68px;
+  padding: 14px 18px;
+}
+
+.dense {
+  grid-template-columns: 32px minmax(0, 1fr) 148px 76px 90px;
+  min-height: 48px;
+  padding: 8px 14px;
+  gap: 12px;
+}
+
+/* Status controls the rim; renewal proximity controls date text. */
+.keep { border-left-color: var(--color-keep-500); --status-glow: rgba(29, 158, 117, 0.13); }
+.cancel { border-left-color: var(--color-cancel-500); --status-glow: rgba(196, 74, 63, 0.13); }
+.undecided { border-left-color: var(--color-undecided-500); --status-glow: rgba(138, 139, 149, 0.13); }
+.renewalDays.warning { color: var(--color-work-500); }
+.renewalDays.urgent { color: var(--color-danger-500); font-weight: 500; }
+
+/* ── Logo ── */
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.dense .logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 11px;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.abbr { line-height: 1; }
+
+/* ── Middle (name + meta) ── */
+.middle {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dense .name { font-size: 14px; }
+.meta {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  letter-spacing: var(--tracking-body);
+  overflow-wrap: anywhere;
+}
+
+/* ── Amount ── */
+.amount {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-variant-numeric: tabular-nums;
+  justify-content: flex-end;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+.amountVal {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: -0.1px;
+  overflow-wrap: anywhere;
+  min-width: 0;
+  max-width: 100%;
+  text-align: right;
+}
+.dense .amountVal { font-size: 13px; }
+.amountCycle {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+/* ── Renewal date ── */
+.renewal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+  font-variant-numeric: tabular-nums;
+  min-width: 0;
+}
+.renewalDate {
+  font-size: 13px;
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-body);
+}
+.renewalDays {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  letter-spacing: var(--tracking-body);
+}
+.dense .renewalDate { font-size: 12px; }
+
+/* ── Status chip slot ── */
+.status { display: flex; align-items: center; justify-content: flex-start; min-width: 0; }
+
+/* ── Responsive ── */
+@container (max-width: 780px) {
+  .comfortable, .dense {
+    grid-template-columns: 32px minmax(0, 1fr) minmax(0, 1fr) 90px;
+    grid-template-areas: "logo middle middle middle" "amount amount renewal status";
+    gap: 10px 8px;
+    padding: 12px;
+  }
+  .logo { grid-area: logo; width: 32px; height: 32px; }
+  .middle { grid-area: middle; }
+  .amount { grid-area: amount; justify-content: flex-start; }
+  .renewal { grid-area: renewal; }
+  .status { grid-area: status; }
+  .meta { display: none; }
+}

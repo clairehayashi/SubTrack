@@ -1,0 +1,14 @@
+.loader { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 24px; color: var(--text-secondary); font-family: var(--font-sans); }
+.fullscreen { min-height: 100vh; background: var(--bg-page); }
+.boxes { display: inline-flex; align-items: center; gap: 8px; height: 40px; }
+.boxes > span { width: 22px; height: 22px; border-radius: 5px; animation: wave 2.4s ease-in-out infinite; }
+.boxes > span:nth-child(1) { background: linear-gradient(145deg, #E1D9FC, #BEADEE); }
+.boxes > span:nth-child(2) { background: linear-gradient(145deg, #C5B6F0, #A18AD6); animation-delay: 180ms; }
+.boxes > span:nth-child(3) { background: linear-gradient(145deg, #A18AD6, #7860BA); animation-delay: 360ms; }
+.boxes > span:nth-child(4) { background: linear-gradient(145deg, #7860BA, #493581); animation-delay: 540ms; }
+.label { font-size: 14px; line-height: 1.5; text-align: center; }
+.compact { display: inline-flex; padding: 0 8px; vertical-align: middle; background: #F7F5FF; border-radius: 6px; }
+.compact .boxes { gap: 5px; height: 22px; }
+.compact .boxes > span { width: 11px; height: 11px; border-radius: 3px; }
+@keyframes wave { 0%, 55%, 100% { transform: translateY(0); } 25% { transform: translateY(-8px); } }
+@media (prefers-reduced-motion: reduce) { .boxes > span { animation: none; } }

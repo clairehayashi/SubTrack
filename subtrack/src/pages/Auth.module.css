@@ -1,0 +1,217 @@
+/* ============================================================
+   Auth page styles
+   - Centered card on cool neutral background
+   - Logo floats above the card
+   - DM Sans throughout, body 14px, headings 28px
+   - Card: 22px radius, inputs/buttons: 16px radius
+   ============================================================ */
+
+.page {
+  min-height: 100vh;
+  background: var(--bg-page);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  font-family: var(--font-sans);
+}
+
+.centerColumn {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ── Logo above card ── */
+.logoRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logoText {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+/* ── Card ── */
+.card {
+  width: 100%;
+  background: var(--bg-surface);
+  border-radius: 18px;
+  padding: 36px 32px 28px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  margin: 0 0 6px;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -1.2px;
+  line-height: 1.2;
+}
+
+.sub {
+  margin: 0 0 22px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  letter-spacing: var(--tracking-body);
+  line-height: 1.55;
+}
+
+/* ── Form ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.input {
+  border: 1px solid var(--field-border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 14px;
+  color: var(--field-text);
+  background: var(--field-bg);
+  font-family: var(--font-sans);
+  outline: none;
+  letter-spacing: var(--tracking-body);
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+.input::placeholder { color: var(--field-placeholder); }
+.input:hover { border-color: var(--field-border-hover); }
+.input:focus {
+  border-color: var(--field-border-focus);
+  box-shadow: 0 0 0 3px var(--field-ring-focus);
+}
+
+.hint {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+  letter-spacing: var(--tracking-body);
+  line-height: 1.5;
+}
+
+.inlineLink {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  padding: 4px 0;
+  margin-top: 2px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-brand-500);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  letter-spacing: var(--tracking-body);
+  transition: opacity 180ms ease;
+}
+.inlineLink:hover { opacity: 0.7; }
+
+.verificationActions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 12px;
+}
+.verificationActions .inlineLink {
+  align-self: stretch;
+  margin-top: 0;
+  padding: 8px 0;
+  text-align: left;
+}
+
+/* ── Buttons ── */
+.primaryBtn {
+  margin-top: 6px;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--color-brand-500);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  letter-spacing: var(--tracking-body);
+  transition: background 180ms ease, transform 180ms ease;
+}
+.primaryBtn:hover:not(:disabled) { background: var(--color-brand-600); }
+.primaryBtn:active:not(:disabled) { transform: scale(0.99); }
+.primaryBtn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* ── Error and info boxes ── */
+.errorBox {
+  margin-bottom: 14px;
+  padding: 11px 14px;
+  font-size: 13px;
+  color: var(--color-danger-500);
+  background: var(--color-danger-tint);
+  border-radius: 12px;
+  letter-spacing: var(--tracking-body);
+  line-height: 1.5;
+}
+.infoBox {
+  margin-bottom: 14px;
+  padding: 11px 14px;
+  font-size: 13px;
+  color: var(--color-keep-500);
+  background: var(--color-keep-tint);
+  border-radius: 12px;
+  letter-spacing: var(--tracking-body);
+  line-height: 1.5;
+}
+
+/* ── Mode switcher ── */
+.switchRow {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-neutral-200);
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-tertiary);
+  letter-spacing: var(--tracking-body);
+}
+.switchLink {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-brand-500);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  letter-spacing: var(--tracking-body);
+  transition: opacity 180ms ease;
+}
+.switchLink:hover { opacity: 0.7; }
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .card { padding: 28px 22px 22px; }
+  .heading { font-size: 24px; letter-spacing: -0.8px; }
+}

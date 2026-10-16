@@ -1,0 +1,118 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  border: 1px solid var(--field-border);
+  border-radius: 12px;
+  background: var(--field-bg);
+  color: var(--field-text);
+  font-family: var(--font-sans);
+  letter-spacing: var(--tracking-body);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+.md { padding: 11px 14px; min-height: 42px; font-size: 14px; }
+.sm { padding: 8px 12px; min-height: 36px; font-size: 13px; }
+
+.trigger:hover:not(:disabled) {
+  border-color: var(--field-border-hover);
+}
+.triggerOpen {
+  border-color: var(--field-border-focus) !important;
+  box-shadow: 0 0 0 3px var(--field-ring-focus);
+}
+.triggerPlaceholder .value {
+  color: var(--field-placeholder);
+}
+.trigger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.value {
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.chevron {
+  width: 10px;
+  height: 6px;
+  color: var(--text-tertiary);
+  transition: transform 180ms ease;
+  flex-shrink: 0;
+}
+.chevronOpen { transform: rotate(180deg); }
+
+.menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 100%;
+  background: var(--bg-surface);
+  border-radius: 12px;
+  box-shadow: var(--shadow-overlay);
+  z-index: 220;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  max-height: 280px;
+  overflow-y: auto;
+  animation: dropFade 0.16s ease;
+}
+.menuRight {
+  left: auto;
+  right: 0;
+}
+@keyframes dropFade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 12px;
+  font-size: 13px;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  letter-spacing: var(--tracking-body);
+  text-align: left;
+  white-space: nowrap;
+  transition: background 180ms ease;
+}
+.option:hover { background: var(--color-brand-tint-08); }
+.optionActive {
+  background: var(--color-brand-tint-08);
+  color: var(--color-brand-500);
+  font-weight: 500;
+}
+.optionLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.check {
+  width: 12px;
+  height: 12px;
+  color: var(--color-brand-500);
+  flex-shrink: 0;
+}

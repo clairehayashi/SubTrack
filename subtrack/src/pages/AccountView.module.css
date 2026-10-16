@@ -1,0 +1,173 @@
+.page { display: flex; flex-direction: column; flex: 1; animation: fadeUp 0.18s ease; }
+@keyframes fadeUp { from { opacity:0;transform:translateY(5px) } to { opacity:1;transform:translateY(0) } }
+
+.acctHeader {
+  background: var(--bg);
+  border-bottom: 0.5px solid var(--border);
+  padding: 22px 28px 0;
+}
+.headerRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.avatarLg {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid;
+}
+.avatarLg svg { width: 20px; height: 20px; }
+.acctBadge {
+  font-size: 10px;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 2px 8px;
+  display: inline-flex;
+  margin-bottom: 5px;
+}
+.acctName { font-size: 20px; font-weight: 500; color: var(--text); letter-spacing: -.3px; }
+.acctSub { font-size: 12px; color: var(--text3); margin-top: 3px; }
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--indigo);
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 11px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--font);
+  transition: background var(--transition), transform var(--transition);
+}
+.addBtn:hover { filter: brightness(0.9); }
+.addBtn:active { transform: scale(0.97); }
+
+.emailPills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-bottom: 14px;
+}
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg2);
+  border: 0.5px solid var(--border2);
+  border-radius: 20px;
+  padding: 4px 10px 4px 6px;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--text2);
+  font-family: var(--font);
+  transition: border-color var(--transition), background var(--transition);
+}
+.pill:hover { border-color: var(--border2); background: var(--bg3); }
+.pillActive { font-weight: 500; }
+.pillDot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.pillCount { font-size: 10px; color: inherit; opacity: .7; margin-left: 2px; }
+
+.metricsStrip {
+  display: flex;
+  border-bottom: 0.5px solid var(--border);
+  background: var(--bg);
+}
+.metricCard {
+  flex: 1;
+  padding: 14px 20px;
+  border-right: 0.5px solid var(--border);
+  min-width: 0;
+}
+.metricCard:last-child { border-right: none; }
+.metricLabel {
+  font-size: 10px;
+  color: var(--text3);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.metricVal { font-size: 18px; font-weight: 500; color: var(--text); letter-spacing: -.3px; line-height: 1; }
+.metricSub { font-size: 11px; color: var(--text3); margin-top: 4px; }
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  padding: 12px 28px;
+  background: var(--bg);
+  border-bottom: 0.5px solid var(--border);
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.filterLeft { display: flex; gap: 5px; flex-wrap: wrap; }
+.filterBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 0.5px solid var(--border2);
+  border-radius: 20px;
+  padding: 5px 11px;
+  font-size: 12px;
+  color: var(--text3);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.filterBtn:hover { background: var(--bg2); color: var(--text2); }
+.statusDot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.filterActive { font-weight: 500; }
+
+.content { padding: 18px 28px; flex: 1; }
+.subList { display: flex; flex-direction: column; gap: 6px; }
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  text-align: center;
+  gap: 10px;
+  background: var(--bg);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-xl);
+}
+.emptyTitle { font-size: 14px; font-weight: 500; color: var(--text2); }
+.emptySub { font-size: 12px; color: var(--text3); line-height: 1.6; max-width: 280px; }
+.emptyBtn {
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--font);
+  margin-top: 4px;
+  transition: filter var(--transition);
+}
+.emptyBtn:hover { filter: brightness(0.9); }
+
+@media (max-width: 780px) {
+  .acctHeader { padding: 16px 16px 0; }
+  .filterBar { padding: 10px 16px; }
+  .content { padding: 14px 16px; }
+  .metricsStrip { display: grid; grid-template-columns: 1fr 1fr; }
+  .metricCard { border-right: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
+}

@@ -1,0 +1,332 @@
+.page {
+  padding: 24px 28px;
+  flex: 1;
+  animation: fadeUp 0.18s ease;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(5px) }
+  to   { opacity: 1; transform: translateY(0) }
+}
+
+.notFound {
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--text2);
+  font-size: 14px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--indigo);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+  margin-bottom: 20px;
+  padding: 0;
+  transition: opacity var(--transition);
+}
+.back:hover { opacity: .7; }
+.back svg { width: 14px; height: 14px; }
+.backLink { color: var(--indigo); font-size: 13px; cursor: pointer; background: none; border: none; font-family: var(--font); }
+
+/* Hero */
+.hero {
+  background: var(--bg);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.heroTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.heroLogo {
+  width: 56px;
+  height: 56px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.heroInfo { flex: 1; min-width: 0; }
+.heroName { font-size: 20px; font-weight: 500; color: var(--text); letter-spacing: -.3px; }
+.heroCat { font-size: 12px; color: var(--text3); margin-top: 4px; }
+.heroActions { display: flex; gap: 8px; flex-shrink: 0; flex-wrap: wrap; }
+
+.btnOutline {
+  background: transparent;
+  border: 0.5px solid var(--border2);
+  border-radius: var(--radius-md);
+  padding: 7px 12px;
+  font-size: 12px;
+  color: var(--text2);
+  cursor: pointer;
+  font-family: var(--font);
+  white-space: nowrap;
+  transition: background var(--transition);
+}
+.btnOutline:hover { background: var(--bg2); }
+
+.btnDanger {
+  background: var(--red-bg);
+  border: 0.5px solid var(--red-mid);
+  border-radius: var(--radius-md);
+  padding: 7px 12px;
+  font-size: 12px;
+  color: var(--red);
+  cursor: pointer;
+  font-family: var(--font);
+  white-space: nowrap;
+  transition: background var(--transition);
+}
+.btnDanger:hover { background: #f5d5d5; }
+
+/* Price band */
+.priceBand {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 0.5px solid var(--border);
+}
+.priceLabel {
+  font-size: 10px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: 4px;
+}
+.priceVal {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -.4px;
+}
+.priceCycle { font-size: 11px; color: var(--text3); margin-top: 2px; }
+
+/* Urgency */
+.urgencyBanner {
+  background: var(--red-bg);
+  border: 0.5px solid var(--red-mid);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.urgencyDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  flex-shrink: 0;
+}
+.urgencyText { font-size: 12px; color: var(--red); flex: 1; min-width: 0; }
+.urgencyAction {
+  font-size: 12px;
+  color: var(--red);
+  font-weight: 500;
+  cursor: pointer;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+.urgencyAction:hover { text-decoration: underline; }
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 14px;
+}
+.leftCol, .rightCol { display: flex; flex-direction: column; gap: 14px; }
+
+/* Cards */
+.card {
+  background: var(--bg);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 16px;
+}
+.cardTitle {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: 12px;
+}
+
+/* Info rows */
+.infoRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+.infoRow:last-child { border-bottom: none; padding-bottom: 0; }
+.infoLabel { font-size: 12px; color: var(--text3); flex-shrink: 0; }
+.infoVal { font-size: 12px; color: var(--text); text-align: right; word-break: break-word; }
+.infoLink {
+  font-size: 12px;
+  color: var(--indigo);
+  text-align: right;
+  word-break: break-all;
+  text-decoration: none;
+}
+.infoLink:hover { text-decoration: underline; }
+
+.cancelNote {
+  background: var(--bg2);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+
+/* Status */
+.statusGroup { display: flex; flex-direction: column; gap: 6px; }
+.statusBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--radius-md);
+  padding: 9px 12px;
+  border: 0.5px solid var(--border);
+  cursor: pointer;
+  background: transparent;
+  font-family: var(--font);
+  text-align: left;
+  width: 100%;
+  transition: background var(--transition), border-color var(--transition);
+}
+.statusBtn:hover { background: var(--bg2); }
+.selKeep      { background: var(--green-bg) !important; border-color: #97C459 !important; }
+.selUndecided { background: var(--amber-bg) !important; border-color: var(--amber-mid) !important; }
+.selCancel    { background: var(--red-bg) !important;   border-color: var(--red-mid) !important; }
+
+.statusDot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.dotKeep      { background: var(--green); }
+.dotUndecided { background: var(--amber); }
+.dotCancel    { background: var(--red); }
+.statusLabel { font-size: 12px; color: var(--text); }
+
+/* Notes */
+.notesBox {
+  width: 100%;
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  font-size: 12px;
+  color: var(--text);
+  background: var(--bg2);
+  resize: none;
+  font-family: var(--font);
+  outline: none;
+  transition: border-color var(--transition);
+}
+.notesBox:focus { border-color: var(--indigo-mid); }
+
+/* Reminder toggle */
+.reminderToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font);
+  transition: color var(--transition);
+  padding: 0;
+}
+
+@media (max-width: 780px) {
+  .page { padding: 16px; }
+  .grid { grid-template-columns: 1fr; }
+  .priceBand { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .heroActions { flex-direction: column; }
+}
+
+/* ── Decision Status — prominence boost ── */
+.statusGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.statusBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid var(--field-border, var(--border));
+  border-radius: 14px;
+  background: var(--bg-surface, var(--bg));
+  cursor: pointer;
+  font-family: var(--font-sans, var(--font));
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary, var(--text));
+  text-align: left;
+  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+.statusBtn:hover {
+  border-color: var(--color-brand-500, var(--indigo));
+  background: var(--color-brand-tint-08, var(--bg2));
+  transform: translateY(-1px);
+}
+
+.statusDot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dotKeep      { background: var(--color-keep-500, #1D9E75); }
+.dotUndecided { background: var(--color-undecided-500, #8A8B95); }
+.dotCancel    { background: var(--color-cancel-500, #6B7280); }
+
+.statusLabel { flex: 1; }
+
+/* Selected: full color fill */
+.selKeep {
+  background: var(--color-keep-500, #1D9E75) !important;
+  border-color: var(--color-keep-500, #1D9E75) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(29, 158, 117, 0.25);
+}
+.selKeep .statusDot { background: #fff !important; }
+
+.selUndecided {
+  background: var(--color-undecided-500, #8A8B95) !important;
+  border-color: var(--color-undecided-500, #8A8B95) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(138, 139, 149, 0.25);
+}
+.selUndecided .statusDot { background: #fff !important; }
+
+.selCancel {
+  background: var(--color-cancel-500, #6B7280) !important;
+  border-color: var(--color-cancel-500, #6B7280) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(107, 114, 128, 0.25);
+}
+.selCancel .statusDot { background: #fff !important; }

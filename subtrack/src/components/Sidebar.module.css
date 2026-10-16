@@ -1,0 +1,179 @@
+.sidebar {
+  width: var(--sidebar-width, 188px);
+  min-width: var(--sidebar-width, 188px);
+  flex-shrink: 0;
+  background: var(--bg);
+  border-right: 0.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 18px 20px;
+}
+
+.logoMark {
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.navSection {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text3);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 0 18px 5px;
+  display: block;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 18px;
+  font-size: 13px;
+  color: var(--text2);
+  cursor: pointer;
+  transition: background var(--transition);
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.navItem:hover { background: var(--bg2); }
+.navItem.active {
+  color: var(--indigo);
+  background: var(--indigo-light);
+  font-weight: 500;
+}
+
+.settingsRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding: 8px 12px 8px 0;
+}
+.navItemBottom { flex: 1; }
+
+.navIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.navIcon svg { width: 15px; height: 15px; }
+
+.navTxt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.navBadge {
+  background: var(--indigo);
+  color: #fff;
+  font-size: 10px;
+  border-radius: 20px;
+  padding: 1px 6px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.acctDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.noAccounts {
+  font-size: 12px;
+  color: var(--text3);
+  padding: 2px 18px 4px;
+  display: block;
+}
+
+.addAcctBtn {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 18px;
+  font-size: 12px;
+  color: var(--text3);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font);
+  white-space: nowrap;
+}
+.addAcctBtn:hover { background: var(--bg2); color: var(--indigo); }
+.addAcctBtn svg { width: 11px; height: 11px; }
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  border-top: 0.5px solid var(--border);
+  min-width: 0;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--indigo-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--indigo);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.userInfo { min-width: 0; }
+
+.userName {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userSub {
+  font-size: 11px;
+  color: var(--text3);
+}
+
+.signOutBtn {
+  margin-left: auto;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--text3);
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  transition: background var(--transition), color var(--transition);
+}
+.signOutBtn:hover { background: var(--bg2); color: var(--text2); }

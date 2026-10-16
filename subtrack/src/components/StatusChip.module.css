@@ -1,0 +1,13 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+.keep      { background: var(--color-keep-tint); color: var(--color-keep-500); }
+.cancel    { background: var(--color-cancel-tint); color: var(--color-cancel-500); }
+.undecided { background: var(--color-undecided-tint); color: var(--text-secondary); }
+.trial     { background: var(--indigo-light);color: var(--indigo-dark); }

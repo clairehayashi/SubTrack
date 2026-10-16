@@ -1,0 +1,30 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-brand-500);
+  box-shadow: 0 2px 6px rgba(83, 74, 183, 0.28);
+  flex-shrink: 0;
+  transition: background 180ms ease, box-shadow 180ms ease;
+}
+
+.text {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Dark mode keeps the tile indigo — brand color, no flip */
+[data-theme="dark"] .mark {
+  box-shadow: 0 2px 8px rgba(83, 74, 183, 0.4);
+}
